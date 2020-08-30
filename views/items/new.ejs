@@ -1,23 +1,23 @@
 <%- include('../partials/header') %>
 <form id="add-item-form" action="/items" method="POST">
     <label>Item Name:
-    <input type = "text" name="name">
+    <input type = "text" class = "new" name="name">
     </label>
 
     <label>Cost:
-    <input type = "number" name="cost">
+    <input type = "number" class = "new" name="cost">
     </label>
 
-    <label>Location Bought (store, online or N/A)
-    <input type = "text" name="location">
+    <label>Location Bought (store name, online or N/A)
+    <input type = "text" class = "new" name="location">
     </label>
 
     <label>Date Purchased:
-    <input type = "date" name="date">
+    <input type = "date" class = "new" name="date">
     </label>
 
     <label>Category:
-        <select name = "category">
+        <select name = "category" class = "new">
             <option value = "housing">Housing Fees</option>
             <option value = "transportation">Transportation</option>
             <option value = "food/drinks">Food/Drinks</option>
@@ -34,8 +34,8 @@
     </label>
     
     <label>Future Purchase?
-        <input type ="checkbox" name = "upcoming">
+        <input class = "new" type ="checkbox" name = "upcoming">
     </label>
 
-    <input type="submit" value="Add Item">
+    <button id = "submitBtn" type = "submit" class = "btn btn-primary">Add Item</button>
 <%- include('../partials/footer') %>

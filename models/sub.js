@@ -5,7 +5,7 @@ const subSchema = new Schema({
     name: String,
     costPerCycle: Number,
     cycleLength: Number,
-    dateStarted: Date,
+    date: Date,
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true

@@ -1,4 +1,26 @@
 <%- include('../partials/header') %>
+<a href = "/subs/new">New Subscription</a>
+<br>
+<thead>
+    <tr>
+      <th>Sub Name</th>
+      <th>Cycle Length (Monthly/Weekly/Bi-Weekly) </th>
+      <th>Price per Cycle</th>
+      <th>Date Started</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% subs.forEach((m) => { %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><%= m.cycleLength %></td>
+        <td><%= m.costPerCycle %></td>
+        <td><%= m.date %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
 
 
 <%- include('../partials/footer') %>

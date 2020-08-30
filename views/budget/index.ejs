@@ -17,7 +17,11 @@
           <td><%= m.name %></td>
           <td><%= m.cost %></td>
           <td><%= m.location %></td>
-          <td><%= m.date %></td>
+
+          <% const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }) %>
+          <% const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat .formatToParts(m.date) %>
+           
+          <td><%= `${day}-${month}-${year }`%></td>
           <td><%= m.category %></td>
           <% if (m.upcoming) { %>
               <%= m.upcoming = "UPCOMING" %>
@@ -29,5 +33,13 @@
       <% }) %>
     </tbody>
   </table>
+<% let totalSpendings = 0 %>
+  <h3> Total Spendings: 
+      <% items.forEach((m) => { %>
+        <% totalSpendings += m.cost %>
+  <% }) %>
+  $<%= totalSpendings %>
+  <% User.totalSpendings %> 
+  </h3>
 
 <%- include('../partials/footer') %>

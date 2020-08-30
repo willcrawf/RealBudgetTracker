@@ -6,6 +6,7 @@ var userSchema = new mongoose.Schema({
   email: String,
   avatar: String,
   googleId: String,
+  totalSpendings: Number
 }, {
   timestamps: true
 });
