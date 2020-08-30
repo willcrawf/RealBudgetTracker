@@ -21,6 +21,8 @@ require('./config/passport');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const itemsRouter = require('./routes/items');
+const budgetRouter = require('./routes/budget');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,7 +45,8 @@ app.use(passport.session());
 // mount all routes with appropriate base paths
 app.use('/', usersRouter);
 app.use('/auth', authRouter)
-app.use('/items', itemsRouter)
+app.use('/budget', budgetRouter)
+app.use('/', itemsRouter)
 
 // invalid request, send 404 page
 app.use(function(req, res, next) {

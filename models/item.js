@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const newItemSchema = new Schema({
+const ItemSchema = new Schema({
     name: String,
     cost: Number,
     location: String,
-    datet: Date,
+    date: Date,
     category: String,
-    upcoming: Boolean,
+    upcoming: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true
 })
-module.exports = mongoose.model('newItem', newItemSchema)
+module.exports = mongoose.model('Item', ItemSchema)

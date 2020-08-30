@@ -1,9 +1,7 @@
 var router = require('express').Router();
-var itemCtrl = require('../controllers/items');
+var budgetCtrl = require('../controllers/budget');
 
-
-router.get('/items/new', isLoggedIn, itemCtrl.new)
-router.post('/items/', isLoggedIn, itemCtrl.create)
+router.get('/', isLoggedIn, budgetCtrl.index)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

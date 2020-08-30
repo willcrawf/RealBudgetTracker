@@ -1,10 +1,26 @@
 const User = require('../models/user');
-const newItem = require('../models/item');
+const Item = require('../models/item');
 
 module.exports = {
-    new: newItemPage
+    new: itemPage,
+    create,
+    // index
 }
 
-function newItemPage(req, res){
+function itemPage(req, res){
     res.render('items/new', {title: 'New Item'})
 }
+
+function create(req, res) {
+    const item = new Item(req.body)
+    item.save(function(err) {
+        if (err) return res.render('items/new')
+        console.log(item)
+        // res.redirect('/movies')
+        res.redirect('items/new')
+    })
+}
+
+// function index(req, res){
+//     res.render('monthSpendings/show', {title: " Month's Spendings", req.body})
+// }

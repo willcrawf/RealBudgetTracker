@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<form id="add-item-form" action="/items/new" method="POST">
+<form id="add-item-form" action="/items" method="POST">
     <label>Item Name:
-    <input type = "text" name="new">
+    <input type = "text" name="name">
     </label>
 
     <label>Cost:
@@ -24,7 +24,7 @@
             <option value = "utilities">Utilities</option>
             <option value = "clothing">Clothing</option>
             <option value = "Medical/Healthcare">Medical/Healthcare</option>
-            <option value = "Insurance"></option>
+            <option value = "Insurance">Insurance</option>
             <option value = "Household Items/Supplies">Household items/Supplies</option>
             <option value = "Debt">Debt</option>
             <option value = "Education">Education</option>
@@ -34,7 +34,8 @@
     </label>
     
     <label>Future Purchase?
-        <input type="checkbox">
+        <input type ="checkbox" name = "upcoming">
     </label>
 
+    <input type="submit" value="Add Item">
 <%- include('../partials/footer') %>
