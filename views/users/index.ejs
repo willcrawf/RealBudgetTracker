@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Users</title>
-  <link rel="stylesheet" href="stylesheets/style.css" />
-</head>
-
-<body>
+<%- include('../partials/header') %>
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
@@ -28,6 +20,5 @@
       <li><%= u.name %></li>
     <% }) %>
   </ul>
-</body>
+  <%- include('../partials/footer') %>
 
-</html>
