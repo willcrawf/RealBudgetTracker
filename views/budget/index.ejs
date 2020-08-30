@@ -18,11 +18,13 @@
           <td><%= m.cost %></td>
           <td><%= m.location %></td>
 
+          <!-- Proper Date Formatting: -->
           <% const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }) %>
           <% const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat .formatToParts(m.date) %>
-           
           <td><%= `${day}-${month}-${year }`%></td>
+
           <td><%= m.category %></td>
+          
           <% if (m.upcoming) { %>
               <%= m.upcoming = "UPCOMING" %>
               <td><%= m.upcoming %></td>
