@@ -25,12 +25,12 @@ As a college student, one of my biggest problems is money. I am always broke! I 
 
 
 ## Getting Started:
-To get started, you must first log in and set a budget and account information. Then, add a budget item/subscription item. 
+To get started, you must first log in and set a budget and account information. Then, add a budget item/sub item. 
 
 ## User Stories:
 * As a user, I want to see my upcoming payments sorted by date in an organized list.
 * As a user, I want to see my most spent categories.
-* As a user, I want to see all my subscriptions sorted by price with payment dates.
+* As a user, I want to see all my subs sorted by price with payment dates.
 * As a user, I want to be able to adjust my budget.
 * As a user, I want my budget to change as I add items.
 * As a user, I want to be able to add upcoming payments.

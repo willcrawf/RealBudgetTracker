@@ -3,7 +3,7 @@ const Item = require('../models/item');
 
 module.exports = {
     new: itemPage,
-    create,
+    create
     // index
 }
 
