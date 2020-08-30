@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+<form id="add-item-form" action="/items/new" method="POST">
+    <label>Item Name:
+    <input type = "text" name="new">
+    </label>
+
+    <label>Cost:
+    <input type = "number" name="cost">
+    </label>
+
+    <label>Location Bought (store, online or N/A)
+    <input type = "text" name="location">
+    </label>
+
+    <label>Date Purchased:
+    <input type = "date" name="date">
+    </label>
+
+    <label>Category:
+        <select name = "category">
+            <option value = "housing">Housing Fees</option>
+            <option value = "transportation">Transportation</option>
+            <option value = "food/drinks">Food/Drinks</option>
+            <option value = "utilities">Utilities</option>
+            <option value = "clothing">Clothing</option>
+            <option value = "Medical/Healthcare">Medical/Healthcare</option>
+            <option value = "Insurance"></option>
+            <option value = "Household Items/Supplies">Household items/Supplies</option>
+            <option value = "Debt">Debt</option>
+            <option value = "Education">Education</option>
+            <option value = "Gifts/Donations">Gifts/Donations</option>
+            <option value = "Entertainment">Entertainment</option>
+        </select>
+    </label>
+    
+    <label>Future Purchase?
+        <input type="checkbox">
+    </label>
+
+<%- include('../partials/footer') %>
