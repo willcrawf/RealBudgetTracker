@@ -7,11 +7,23 @@ module.exports = {
     // index
 }
 
+    
+
 function itemPage(req, res){
+    if (User.budget) {
+        return
+    } else {
+        res.render("budget/noBudget", {title: ""})
+    }
     res.render('items/new', {title: 'New Item'})
 }
 
 function create(req, res) {
+    if (User.budget) {
+        return
+    } else {
+        res.render("budget/noBudget", {title: ""})
+    }
     const item = new Item(req.body)
     item.save(function(err) {
         if (err) return res.render('items/new')
