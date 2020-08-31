@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const Item = require('../models/item');
-const profile = require('../models/profile');
+const Profile = require('../models/profile');
 
 module.exports = {
     new: itemPage,
@@ -15,10 +15,6 @@ function itemPage(req, res){
 }
 
 function create(req, res) {
-console.log(profile.budget)
-    if (!profile.budget) {
-        res.render("budget/noBudget", {title: ""})
-    }
     const item = new Item(req.body)
     item.save(function(err) {
         if (err) return res.render('items/new')

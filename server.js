@@ -24,6 +24,7 @@ const itemsRouter = require('./routes/items');
 const budgetRouter = require('./routes/budget');
 const subsRouter = require('./routes/subs');
 const profilesRouter = require('./routes/profiles');
+const topCategoriesRouter = require('./routes/topCategories');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,6 +51,7 @@ app.use('/budget', budgetRouter)
 app.use('/', itemsRouter)
 app.use('/subs', subsRouter)
 app.use('/', profilesRouter)
+app.use('/topCategories', topCategoriesRouter)
 
 // invalid request, send 404 page
 app.use(function(req, res, next) {
