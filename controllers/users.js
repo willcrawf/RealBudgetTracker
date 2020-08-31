@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 module.exports = {
-  index,
+  index
 };
 
 function index(req, res) {
@@ -10,3 +10,4 @@ function index(req, res) {
     res.render('users/index', {title: 'Users', user: req.user, users })
   })
 }
+

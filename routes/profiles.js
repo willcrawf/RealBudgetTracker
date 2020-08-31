@@ -1,6 +1,9 @@
 var router = require('express').Router();
-var profilesCtrl = require('../controllers/profiles');
+var profileCtrl = require('../controllers/profiles');
 
-router.get('/users/profile', profilesCtrl.show)
 
+
+router.get('/profiles', profileCtrl.show)
+router.get('/profiles/newBudget', profileCtrl.newBudget)
+router.post('/profiles/addBudget', profileCtrl.addBudget)
 module.exports = router;

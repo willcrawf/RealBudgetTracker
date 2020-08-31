@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Item = require('../models/item');
+const profile = require('../models/profile');
 
 module.exports = {
     new: itemPage,
@@ -10,26 +11,19 @@ module.exports = {
     
 
 function itemPage(req, res){
-    if (User.budget) {
-        return
-    } else {
-        res.render("budget/noBudget", {title: ""})
-    }
     res.render('items/new', {title: 'New Item'})
 }
 
 function create(req, res) {
-    if (User.budget) {
-        return
-    } else {
+console.log(profile.budget)
+    if (!profile.budget) {
         res.render("budget/noBudget", {title: ""})
     }
     const item = new Item(req.body)
     item.save(function(err) {
         if (err) return res.render('items/new')
         console.log(item)
-        // res.redirect('/movies')
-        res.redirect('items/new')
+        res.render('items/new')
     })
 }
 

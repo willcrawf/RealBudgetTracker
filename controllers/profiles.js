@@ -1,11 +1,29 @@
+const Profile = require('../models/profile');
 const User = require('../models/user');
-const Item = require('../models/item');
 
 module.exports = {
-    show
-    // index
+  show,
+  newBudget,
+  addBudget,
 }
 
 function show(req, res){
-    res.render('users/profile', {title: "Profile", User})
+Profile.findOne({user: req.user._id}, function(err, profile){
+    console.log(profile)
+    res.render('profiles/profile', {title: 'Profile', profile, user: req.user})
+})
 }
+
+function newBudget(req, res){
+    res.render('profiles/newBudget',{title: "New Budget", Profile})
+}
+
+function addBudget(req, res){
+    req.body.user = req.user._id
+    Profile.create(req.body)
+    .then((profile) => {
+        res.redirect('/profiles' )})
+    .catch(err => {
+        console.log(err)
+        res.redirect('/profiles')})
+    }
