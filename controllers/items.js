@@ -17,9 +17,9 @@ function itemPage(req, res){
 function create(req, res) {
     const item = new Item(req.body)
     item.save(function(err) {
-        if (err) return res.render('items/new')
+        if (err) return res.render('items/new', {title: "Items"})
         console.log(item)
-        res.render('items/new')
+        res.render('items/new', {title: "Items"})
     })
 }
 

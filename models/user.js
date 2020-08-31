@@ -1,6 +1,12 @@
 var mongoose = require('mongoose');
 
 
+const topCategoriesSchema = ({
+  category: String,
+  amount: Number,
+  cost: Number
+})
+
 
 var userSchema = new mongoose.Schema({
   name: String,
@@ -8,7 +14,8 @@ var userSchema = new mongoose.Schema({
   avatar: String,
   googleId: String,
   totalSpendings: Number,
-  budget: Number
+  budget: Number,
+  topCategories: [topCategoriesSchema]
 }, {
   timestamps: true
 });
