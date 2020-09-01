@@ -13,9 +13,11 @@
 
 #navBar {
   margin: 0px 0px 40px 0px;
+  display: flex;
 }
 
-body {
+
+body{
   padding: 50px;
   color: #d4d4dc;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

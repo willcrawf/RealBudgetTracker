@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 const subSchema = new Schema({
     name: String,
     costPerCycle: Number,
-    cycleLength: Number,
     date: Date,
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {

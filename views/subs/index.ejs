@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 <a href = "/subs/new">New Subscription</a>
 <br>
+<table class="table table-striped table-dark">
 <thead>
     <tr>
-      <th>Sub Name</th>
-      <th>Cycle Length (Monthly/Weekly/Bi-Weekly) </th>
+      <th>Name</th>
       <th>Price per Cycle</th>
       <th>Date Started</th>
       <th></th>
@@ -14,9 +14,10 @@
     <% subs.forEach((m) => { %>
       <tr>
         <td><%= m.name %></td>
-        <td><%= m.cycleLength %></td>
-        <td><%= m.costPerCycle %></td>
-        <td><%= m.date %></td>
+        <td>$<%=m.costPerCycle %></td>
+        <% const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }) %>
+          <% const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat .formatToParts(m.date) %>
+          <td><%= `${day}-${month}-${year }`%></td>
       </tr>
     <% }) %>
   </tbody>
